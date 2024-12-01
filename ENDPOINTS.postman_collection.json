@@ -1,0 +1,1156 @@
+{
+	"info": {
+		"_postman_id": "a456870f-e7e3-449b-97c4-3f71488a9023",
+		"name": "BEST TRAVEL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17188835"
+	},
+	"item": [
+		{
+			"name": "ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/ticket/{{id_ticket}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"{{id_ticket}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket-price",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/ticket?idFly=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket"
+					],
+					"query": [
+						{
+							"key": "idFly",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.collectionVariables.set(\"id_ticket\", response.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idClient\": \"VIKI771012HMCRG093\",\r\n    \"idFly\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ticket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idClient\": \"VIKI771012HMCRG093\",\r\n    \"idFly\": 12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ticket/{{id_ticket}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"{{id_ticket}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/ticket/{{id_ticket}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"{{id_ticket}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/reservation/{{id_reservation}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reservation",
+						"{{id_reservation}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reservation-price",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "currency",
+						"value": "COP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/reservation?idHotel=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reservation"
+					],
+					"query": [
+						{
+							"key": "idHotel",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.collectionVariables.set(\"id_reservation\", response.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idClient\": \"VIKI771012HMCRG093\",\r\n    \"idHotel\": 10,\r\n    \"totalDays\": 5,\r\n    \"email\": \"cgalindorivera@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/reservation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idClient\": \"VIKI771012HMCRG093\",\r\n    \"idHotel\": 4,\r\n    \"totalDays\": 2,\r\n    \"email\": \"cgalindorivera@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/reservation/{{id_reservation}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reservation",
+						"{{id_reservation}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/reservation/{{id_reservation}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reservation",
+						"{{id_reservation}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fly-getall",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sortType",
+						"value": "NONE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/fly?page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fly"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fly-lessprice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fly/less_price?price=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fly",
+						"less_price"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fly-betweenprice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fly/between_price?min=20&max=30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fly",
+						"between_price"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "20"
+						},
+						{
+							"key": "max",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fly-origindestiny",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fly/origin_destiny?origin=Mexico&destiny=Canada",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fly",
+						"origin_destiny"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "Mexico"
+						},
+						{
+							"key": "destiny",
+							"value": "Canada"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hotel-getall",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sortType",
+						"value": "NONE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/hotel?page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hotel"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hotel-lessprice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hotel/less_price?price=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hotel",
+						"less_price"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hotel-betweenprice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hotel/between_price?min=70&max=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hotel",
+						"between_price"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "70"
+						},
+						{
+							"key": "max",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hotel-rating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hotel/rating?rating=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hotel",
+						"rating"
+					],
+					"query": [
+						{
+							"key": "rating",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tour",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tour/{{id_tour}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tour",
+						"{{id_tour}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tour",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.collectionVariables.set(\"id_tour\", response.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"BBMB771012HMCRR022\",\r\n    \"flights\": [\r\n        {\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"id\": 2\r\n        },\r\n        {\r\n            \"id\": 3\r\n        },\r\n        {\r\n            \"id\": 4\r\n        },\r\n        {\r\n            \"id\": 5\r\n        }\r\n    ],\r\n    \"hotels\": [\r\n        {\r\n            \"id\": 1,\r\n            \"totalDays\": 2\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"totalDays\": 4\r\n        },\r\n        {\r\n            \"id\": 15,\r\n            \"totalDays\": 5\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tour",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tour",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tour/{{id_tour}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tour",
+						"{{id_tour}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tour-ticket-delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tour/{{id_tour}}/remove_ticket/7ad971f0-5756-4a1e-aa7c-f70c259ee4be",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tour",
+						"{{id_tour}}",
+						"remove_ticket",
+						"7ad971f0-5756-4a1e-aa7c-f70c259ee4be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tour-ticket-add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tour/{{id_tour}}/add_ticket/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tour",
+						"{{id_tour}}",
+						"add_ticket",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tour-reservation-delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tour/{{id_tour}}/remove_reservation/dc2501aa-9d78-4e6b-a228-131414fd1ef4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tour",
+						"{{id_tour}}",
+						"remove_reservation",
+						"dc2501aa-9d78-4e6b-a228-131414fd1ef4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tour-reservation-add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tour/{{id_tour}}/add_reservation/10?totalDays=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tour",
+						"{{id_tour}}",
+						"add_reservation",
+						"10"
+					],
+					"query": [
+						{
+							"key": "totalDays",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-state",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/state?username=heisenberg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"state"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "heisenberg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-add-role",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/add-role?username=heisenberg&role=write",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"add-role"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "heisenberg"
+						},
+						{
+							"key": "role",
+							"value": "write"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-remove-role",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/remove-role?username=heisenberg&role=write",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"remove-role"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "heisenberg"
+						},
+						{
+							"key": "role",
+							"value": "write"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.collectionVariables.set(\"token\", response.access_token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "mysecret123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Y2xpZW50OnNlY3JldA=="
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=8F3C03E633204CAA6ED7400E13A8C0D1"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "redirect_uri",
+							"value": "https://oauthdebugger.com/debug",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "oWfwY1ZBOJRn2BYnjaM5q2ookHfhToKBPVpZiVKY7yZKOpo6K4nXlSj674rSBijR3XCvZScLbeQjGXdc22EsGv19VIlv2wfwRmJC2L6KcjugtLUZ5YiIdHNaGH__JFQ9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id_ticket",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "id_reservation",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "id_tour",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
